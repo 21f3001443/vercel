@@ -9,4 +9,8 @@ def read_root():
     data = ''
     with open('q-vercel-python.json', 'r') as f:
         data = json.load(f)
-    return json.dumps(data)
+
+    output = {
+        "marks": [entry["marks"] for entry in data]
+    }
+    return json.dumps(output)
