@@ -4,7 +4,7 @@ import json
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/api")
 def read_root():
     data = ''
     with open('q-vercel-python.json', 'r') as f:
