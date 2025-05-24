@@ -1,9 +1,9 @@
 {
   "builds": [{ "src": "main.py", "use": "@vercel/python" }],
-  "routes": [{ "src": "/(.*)", "dest": "main.py" }],
-  "headers": [
-    {
-      "source": "/(.*)",
+  "routes": [
+    { 
+      "src": "/(.*)", 
+      "dest": "main.py",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
