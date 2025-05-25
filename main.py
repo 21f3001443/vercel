@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Response
 import json
 
 app = FastAPI()
@@ -11,4 +11,8 @@ def read_root(name: list[str] = Query(...)):
     out = {
         "marks": [entry["marks"] for entry in data if entry["name"] in name]
     }
-    return out
+    headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+    }
+    return Response(content=out, status_code=200, headers=headers)
