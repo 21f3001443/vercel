@@ -8,8 +8,14 @@ def read_root(name: list[str] = Query(...)):
     with open('q-vercel-python.json', 'r') as f:
         data = json.load(f)
 
+    marks = []
+    for n in name:
+        for entry in data:
+            if entry["name"] == n:
+                marks.append(entry["marks"])
+                break
     out = {
-        "marks": [entry["marks"] for entry in data if entry["name"] in name]
+        "marks": marks
     }
     headers = {
         "Access-Control-Allow-Origin": "*",
