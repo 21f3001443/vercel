@@ -17,4 +17,4 @@ def read_root(name: list[str] = Query(...)):
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true",
     }
-    return Response(content=out, status_code=200, headers=headers)
+    return Response(content=json.dumps(out), media_type="application/json", status_code=200, headers=headers)
