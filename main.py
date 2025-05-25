@@ -13,6 +13,6 @@ def read_root(name: list[str] = Query(...)):
     }
     headers = {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     }
     return Response(content=out, status_code=200, headers=headers)
